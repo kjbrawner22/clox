@@ -21,9 +21,14 @@ void writeValueArray(ValueArray* array, Value value)
   if (array->capacity < array->count + 1) {
     int oldCapacity = array->capacity;
     array->capacity = GROW_CAPACITY(oldCapacity);
-    GROW_ARRAY(array->values, Value, oldCapacity, array->capacity);
+    array->values = GROW_ARRAY(array->values, Value, oldCapacity, array->capacity);
   }
 
   array->values[array->count] = value;
   array->count++;
+}
+
+void printValue(Value value)
+{
+  printf("%g", value);
 }
