@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 
 #include "common.h"
 #include "chunk.h"
@@ -43,9 +44,12 @@ int main(int argc, char const *argv[])
   writeLineArray(&lines, 8, 28);
   writeLineArray(&lines, 9, 43);
   writeLineArray(&lines, 10, 72);
+  
+  assert(getLineArray(&lines, 9) == 5);
+  assert(getLineArray(&lines, 8) == 5);
+  assert(getLineArray(&lines, 0) == 1);
+  assert(getLineArray(&lines, 30) == 8);
 
-  printf("getLine(should print 5): %d\n", getLineArray(&lines, 9));
-  printf("displayLineArray: ");
   displayLineArray(&lines);
 
   freeLineArray(&lines);

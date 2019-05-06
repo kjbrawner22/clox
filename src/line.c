@@ -49,7 +49,9 @@ void writeLineArray(LineArray *lines, int line,
  */
 static int binaryRangeSearch(int *array, int size, int number)
 {
-  if (number >= array[size - 1]) {
+  if (number < 0) {
+    return -1;
+  } else if (number >= array[size - 1]) {
     return size - 1;
   }
 
@@ -68,25 +70,17 @@ static int binaryRangeSearch(int *array, int size, int number)
 
 int getLineArray(LineArray *lines, int instructionIndex)
 {
-  /*for (int i = 0; i < lines->count - 1; i++) {
-    if (lines->array[i + 1] > instructionIndex &&
-      lines->array[i] <= instructionIndex) {
-      return i + 1;
-    }
-  }
-
-  return lines->count;
-  */
   return binaryRangeSearch(lines->array, lines->count, 
     instructionIndex) + 1;
 }
 
 void displayLineArray(LineArray *lines)
 {
+  printf("line number : starting instruction index\n");
   printf("{\n");
   for (int i = 0; i < lines->count; i++) {
 
-    printf("    line %d: %d\n", i + 1, lines->array[i]);
+    printf("    %d : %d\n", i + 1, lines->array[i]);
   }
 
   printf("}\n");
