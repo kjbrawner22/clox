@@ -1,5 +1,8 @@
 # Clox - Implementation following [Crafting Interpreters](https://www.craftinginterpreters.com)
 
+### 5/7/2019
+- Finished [challenge_2.3](https://github.com/kjbrawner22/clox/tree/challenge_2.3). Did some testing.
+
 ### 5/6/2019
 - Did a couple more tests for [challenge_1.1](https://github.com/kjbrawner22/clox/tree/challenge_1.1) with <assert.h>.
 - Finished chapter 2.
