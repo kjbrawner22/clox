@@ -20,6 +20,7 @@ static void repl()
 
     if (strlen(line) > 0) {
       add_history(line);
+      printf("line: %s\n", line);
       interpret(line);
     }
     free(line);

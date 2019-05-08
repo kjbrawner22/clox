@@ -1,7 +1,1 @@
-// Test comment, shouldn't generate any tokens in scanner
-var hello = 3;
-
-while (hello > 0) {
-  //decrement hello
-  hello = hello - 1;
-}
+(3 - 2) * 7

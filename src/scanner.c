@@ -201,6 +201,14 @@ Token scanToken()
 
   scanner.start = scanner.current;
 
+  // We need to check right after the whitespace is skipped, rather
+  // than wait until after advance(). If we advance() and then check
+  // isAtEnd(), then char c will be EOF ('\0'), and the check will 
+  // point to a random byte one past the source string. This leads
+  // to a bunch of seemingly-random errors, always at the end of 
+  // scanning the source string.
+  if (isAtEnd()) return makeToken(TOKEN_EOF);
+
   char c = advance();
 
   if (isAlpha(c)) return identifier();
@@ -231,8 +239,5 @@ Token scanToken()
     case '"': return string();
   }
 
-  if (isAtEnd()) return makeToken(TOKEN_EOF);
-
-  printf("error: [%c]\n", c);
   return errorToken("Unexpected character.");
 }
