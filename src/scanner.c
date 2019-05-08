@@ -201,9 +201,6 @@ Token scanToken()
 
   scanner.start = scanner.current;
 
-  // Book's scanner module has this line at the end, right before 
-  // the errorToken(). This would be incorrect.
-  //
   // We need to check right after the whitespace is skipped, rather
   // than wait until after advance(). If we advance() and then check
   // isAtEnd(), then char c will be EOF ('\0'), and the check will 
