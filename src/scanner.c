@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "common.h"
 #include "scanner.h"
@@ -95,29 +96,20 @@ static void skipWhitespace()
 {
   for (;;) {
     char c = peek();
-    switch (c) {
-      case ' ':
-      case '\r':
-      case '\t':
-        advance();
-        break;
-      
-      case '\n':
-        scanner.line++;
-        advance();
-        break;
-      
-      case '/':
-        if (peekNext() == '/') {
+
+    if (isspace(c)) {
+      if (c == '\n') scanner.line++;
+
+      advance();
+    } else if (c == '/') {
+      if (peekNext() == '/') {
           // a comment goes until the end of the line
           while (peek() != '\n' && !isAtEnd()) advance();
         } else {
           return;
         }
-        break;
-      
-      default: 
-        return;
+    } else {
+      return;
     }
   }
 }

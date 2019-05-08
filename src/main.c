@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <readline/readline.h>
+#include <readline/history.h>
+
 #include "common.h"
 #include "chunk.h"
 #include "debug.h"
@@ -9,16 +12,17 @@
 
 static void repl()
 {
-  char line[1024];
-  for (;;) {
-    printf("> ");
+  printf("LOX 0.2.0\n");
+  printf("REPL - Hit Ctrl-C to exit.\n");
+  char *line;
+  while ((line = readline("> ")) != NULL) {
 
-    if (!fgets(line, sizeof(line), stdin)) {
-      printf("\n");
-      break;
+
+    if (strlen(line) > 0) {
+      add_history(line);
+      interpret(line);
     }
-
-    interpret(line);
+    free(line);
   }
 }
 
