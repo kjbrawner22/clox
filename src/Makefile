@@ -11,10 +11,10 @@ LIBS=-lreadline
 _TESTS = arithmetic.lox bool.lox
 TESTS  = $(patsubst %,$(TESTDIR)/%,$(_TESTS))
 
-_DEPS = chunk.h common.h compiler.h debug.h object.h memory.h scanner.h value.h vm.h
+_DEPS = chunk.h common.h compiler.h debug.h object.h memory.h scanner.h table.h value.h vm.h
 DEPS  = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = chunk.o compiler.o object.o main.o debug.o memory.o scanner.o value.o vm.o
+_OBJ = chunk.o compiler.o object.o main.o debug.o memory.o scanner.o table.o value.o vm.o
 OBJ  = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
