@@ -2,6 +2,10 @@
 
 NOTE: I'm using chapter numbers relative to the start of clox, not jlox. Chapter 1 is ["Chunks of Bytecode"](http://www.craftinginterpreters.com/chunks-of-bytecode.html), which is Chapter 14.
 
+### 5/12/2019
+- Finished "Strings".
+- created mini `make test` command to run lox files in the `tests` folder
+
 ### 5/9/2019
 - Finished [chapter_5](https://github.com/kjbrawner22/clox/tree/chapter_5).
 - Fixed typo in README journal.
