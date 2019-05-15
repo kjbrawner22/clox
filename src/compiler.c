@@ -250,6 +250,18 @@ static uint8_t identifierConstant(Token *name)
   return makeConstant(OBJ_VAL(copyString(name->start, name->length)));
 }
 
+static void addLocal(Token name)
+{
+  
+}
+
+static void declareVariable()
+{
+  if (current->scopeDepth == 0) return;
+
+  addLocal(parser.current);
+}
+
 static void namedVariable(Token name, bool canAssign)
 {
   int arg = identifierConstant(&name);
@@ -363,7 +375,7 @@ static uint8_t parseVariable(const char *errorMessage)
 static void defineVariable(uint8_t global)
 {
   if (current->scopeDepth > 0) return;
-  
+
   emitBytes(OP_DEFINE_GLOBAL, global);
 }
 
