@@ -1,0 +1,12 @@
+var a = "a1";
+{
+  var a = "a2";
+  {
+    var a = "a3";
+    var b = "b";
+    print b;
+    print a;
+  }
+  print a; // expect "a2"
+}
+print a; // expect "a1"
