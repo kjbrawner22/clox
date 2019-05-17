@@ -2,6 +2,14 @@
 
 NOTE: I'm using chapter numbers relative to the start of clox, not jlox. Chapter 1 is ["Chunks of Bytecode"](http://www.craftinginterpreters.com/chunks-of-bytecode.html), which is Chapter 14.
 
+### 5/17/2019
+- Finished "Local Variables"
+- wrote a small scope test
+
+### 5/15/2019
+- Finished "Global Variables"
+- Started "Local Variables"
+
 ### 5/13/2019
 - Finished "Hash Tables".
 
