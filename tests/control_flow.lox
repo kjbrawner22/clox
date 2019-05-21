@@ -1,0 +1,16 @@
+print "--- Testing 'if' 'else' ---";
+print "Expect 'x <= 5'";
+
+var x = 3;
+if (x > 5) {
+  print x;
+} else {
+  print "x <= 5";
+}
+
+print "--- Testing 'for' loop ---";
+print "Expect 0 -> 5";
+
+for (x = 0; x <= 5; x = x + 1) {
+  print x;
+}

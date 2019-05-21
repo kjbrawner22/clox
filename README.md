@@ -1,21 +1,25 @@
 # Clox - Implementation following [Crafting Interpreters](https://www.craftinginterpreters.com)
 
-NOTE: I'm using chapter numbers relative to the start of clox, not jlox. Chapter 1 is ["Chunks of Bytecode"](http://www.craftinginterpreters.com/chunks-of-bytecode.html), which is Chapter 14.
+NOTE: I'm using chapter numbers relative to the start of clox, not jlox. Chapter 1 is ["Chunks of Bytecode"](http://www.craftinginterpreters.com/chunks-of-bytecode.html), which is Chapter 14. I also stopped using chapter numbers and just started labeling based on the chapter title.
+
+### 5/21/2019
+- Finished "Jumping Forward and Back".
+- Waiting for next chapter to be written... \*sigh\*
 
 ### 5/17/2019
-- Finished "Local Variables"
-- wrote a small scope test
+- Finished "Local Variables".
+- wrote a small scope test.
 
 ### 5/15/2019
-- Finished "Global Variables"
-- Started "Local Variables"
+- Finished "Global Variables".
+- Started "Local Variables".
 
 ### 5/13/2019
 - Finished "Hash Tables".
 
 ### 5/12/2019
 - Finished "Strings".
-- created mini `make test` command to run lox files in the `tests` folder
+- created mini `make test` command to run lox scripts in the `tests` folder.
 
 ### 5/9/2019
 - Finished [chapter_5](https://github.com/kjbrawner22/clox/tree/chapter_5).
